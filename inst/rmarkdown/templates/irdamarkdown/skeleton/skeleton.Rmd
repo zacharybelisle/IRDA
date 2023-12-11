@@ -1,18 +1,100 @@
 ---
-title: "Template Title"
-author: "Your Name"
-date: "The Date"
-output: output_format
+title: "TITRE"
+author: "AUTEUR"
+date: "`r Sys.Date()`"
+output:
+  bookdown::html_document2:
+    toc: true
+    number_sections: true
+    toc_depth: 3
+    toc_float:
+      collapsed: yes
+      smooth_scroll: yes
+editor_options: 
+  markdown: 
+    wrap: 72
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+```{css, echo = FALSE}
+#TOC>ul>li {
+background: #0062a1;
+color: white;
+}
+#TOC>ul>ul>li {
+background: #97be0d;
+color: white;
+}
+#TOC>ul>ul>ul>li {
+background: white;
+color: #808080;
+}
+.scroll-150 {
+max-height: 150px;
+overflow-y: auto;
+background-color: inherit;
+}
 ```
 
-## Adding an RMarkdown Template
+```{=html}
+<style>
+h1.title{
+font-size: 38px !important;
+color: #97be0d !important;
+}
+h1{
+font-size: 28px !important;
+color: #0062a1 !important;
+}
+h2{
+font-size: 25px !important;
+color: #97be0d !important;
+}
+h3{
+font-size: 20px !important;
+color: #808080 !important;
+}
+</style>
+```
 
-This file is what a user will see when they select your template. Make sure that you update the fields in the yaml header. In particular you will want to update the `output` field to whatever format your template requires.
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(warning = FALSE, message = FALSE)
+```
 
-This is a good place to demonstrate special features that your template provides. Ideally it should knit out-of-the-box, or at least contain clear instructions as to what needs changing.
+------------------------------------------------------------------------
 
-Finally, be sure to remove this message!
+ 
+
+Ce document a été préparé avec `r version$version.string` et les
+librairies suivante:
+
+-   readxl version `r packageVersion("readxl")` : Importation des
+    données Excel
+-   ggplot2 version `r packageVersion("ggplot2")` : Visualisation des
+    données
+-   magrittr version `r packageVersion("magrittr")` : Traitement des
+    données
+-   tidyverse version `r packageVersion("tidyverse")` : Traitement des
+    données
+
+ 
+
+Chargement des librairies
+
+```{r packages}
+# Package names
+packages <- c('readxl', 'tidyverse', 'hablar', 'magrittr')
+
+# Install packages not yet installed
+installed_packages <- packages %in% rownames(installed.packages())
+if (any(installed_packages == FALSE)) {
+  install.packages(packages[!installed_packages])
+}
+
+# Options
+options(dplyr.summarise.inform = FALSE, scipen = 50, digits = 8)
+
+# Packages loading
+invisible(lapply(packages, library, character.only = TRUE, quietly = TRUE))
+```
+
+ 
