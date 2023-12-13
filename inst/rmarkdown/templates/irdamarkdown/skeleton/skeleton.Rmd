@@ -17,11 +17,11 @@ editor_options:
 
 ```{css, echo = FALSE}
 #TOC>ul>li {
-background: #0062a1;
+background: #002752;
 color: white;
 }
 #TOC>ul>ul>li {
-background: #97be0d;
+background: #aed136;
 color: white;
 }
 #TOC>ul>ul>ul>li {
@@ -39,15 +39,15 @@ background-color: inherit;
 <style>
 h1.title{
 font-size: 38px !important;
-color: #97be0d !important;
+color: #aed136 !important;
 }
 h1{
 font-size: 28px !important;
-color: #0062a1 !important;
+color: #002752 !important;
 }
 h2{
 font-size: 25px !important;
-color: #97be0d !important;
+color: #75aa41 !important;
 }
 h3{
 font-size: 20px !important;
